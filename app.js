@@ -6,7 +6,8 @@ function moveHands() {
 
         document.getElementById('dtseconds').innerHTML = getSeconds();
         document.getElementById('dtminutes').innerHTML= getMinutes();
-        document.getElementById('dthours').innerHTML = getHours() % 12;
+        if(getHours() != 12) document.getElementById('dthours').innerHTML = getHours() % 12;
+        else document.getElementById('dthours').innerHTML = getHours();
 
         document.getElementById('seconds').style.cssText = "-webkit-transform:rotate(" + s + "deg);";
         document.getElementById('minutes').style.cssText = "-webkit-transform:rotate(" + m + "deg);";
